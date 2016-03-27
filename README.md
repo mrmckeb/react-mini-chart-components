@@ -4,7 +4,7 @@ A collection of light-weight mini chart components, built with SVG - with no dep
 ## Installation
 This package is pre-release and is yet to be published to NPM. To install, install from this repository.
 ```javascript
-npm install --save https://github.com/mrmckeb/react-mini-chart-components
+npm install --save react-mini-chart-components
 ```
 
 ## Setup
