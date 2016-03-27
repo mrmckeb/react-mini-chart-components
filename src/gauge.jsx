@@ -39,7 +39,7 @@ const Gauge = React.createClass({
         return {
             color: 'Orange',
             type: 'full-gauge',
-            value: 33,
+            value: 50,
             width: '2em'
         }
     },
@@ -61,7 +61,7 @@ const Gauge = React.createClass({
 
     propTypes: {
         color: React.PropTypes.string,
-        type: React.PropTypes.string.isRequired,
+        type: React.PropTypes.string,
         value: function(props, propName, componentName) {
             const prop = props[propName];
             if (prop) {
@@ -72,8 +72,6 @@ const Gauge = React.createClass({
                 }
                 return null;
             }
-            console.log(React.PropTypes);
-
         },
         width: React.PropTypes.string
     },
