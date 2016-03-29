@@ -1,9 +1,11 @@
-import Gauge from './gauge';
+import {FullGauge, HalfGauge} from './components/gauges';
 
 export {
-    Gauge
+    FullGauge,
+    HalfGauge
 };
 
 export default {
-    Gauge
+    FullGauge,
+    HalfGauge
 };

@@ -1,6 +1,6 @@
 {
     "name": "react-mini-chart-components",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "description": "A collection of light-weight SVG mini chart components - with no dependencies.",
     "main": "index.js",
     "files": [
@@ -16,6 +16,7 @@
     ],
     "scripts": {
         "test": "",
+        "prepublish": "npm run build",
         "build": "babel --presets react,es2015 src/ --out-dir lib/",
         "dev": "webpack-dev-server --inline --hot"
     },

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Gauge} from './src/index';
+import {FullGauge, HalfGauge} from './src/index';
 
 const DemoApp = React.createClass({
 
@@ -23,11 +23,11 @@ const DemoApp = React.createClass({
         return (
             <div onClick={this.generateRandomValues}>
                 <div>
-                    <Gauge type='full-gauge' value={this.state.gauge1} />
+                    <FullGauge value={this.state.gauge1} />
                     {this.state.gauge1}
                 </div>
                 <div>
-                    <Gauge type='half-gauge' value={this.state.gauge2} color='LimeGreen' width='5em' />
+                    <HalfGauge value={this.state.gauge2} color='LimeGreen' width='5em' />
                     {this.state.gauge2}
                 </div>
             </div>
