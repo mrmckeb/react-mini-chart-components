@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {FullGauge, HalfGauge} from './src/index';
+import { FullGauge, HalfGauge } from '../src/index';
 
 const DemoApp = React.createClass({
 
@@ -19,7 +19,6 @@ const DemoApp = React.createClass({
     },
 
     render: function () {
-        const inEdit = this.state.inEdit !== false;
         return (
             <div onClick={this.generateRandomValues}>
                 <div>

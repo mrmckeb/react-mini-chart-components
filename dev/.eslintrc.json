@@ -1,0 +1,29 @@
+{
+    "plugins": [
+        "react"
+    ],
+    "extends": "eslint:recommended",
+    "env": {
+        "es6": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "curly": "error",
+        "eqeqeq": "error",
+        "indent": "error",
+        "max-len": ["error"],
+        "no-multi-spaces": "error",
+        "no-var": "error",
+        "object-curly-spacing": ["error", "always"],
+        "quotes": ["error", "single"],
+        "react/jsx-uses-vars": "error",
+        "semi": ["error", "always"],
+        "space-before-function-paren": "error"
+    }
+}

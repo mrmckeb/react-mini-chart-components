@@ -4,11 +4,11 @@ const CIRCLE = {
     cx: '150',
     cy: '150',
     r: '100'
-}
+};
 
 const CIRCUMFERENCE = 2 * Math.PI * CIRCLE.r;
 
-const CLASSNAME = 'react-mini-chart-gauge';
+const STYLEID = 'react-mini-chart-gauge';
 
 class BaseGauge extends React.Component {
 
@@ -21,7 +21,7 @@ class BaseGauge extends React.Component {
 
     appendCss (head) {
         const style = document.createElement('style');
-        style.id = CLASSNAME;
+        style.id = STYLEID;
         style.innerHTML = `
         .react-mini-chart.radial-gauge {
             width: 15em;
@@ -42,8 +42,8 @@ class BaseGauge extends React.Component {
 
     componentWillMount () {
         const head = document.head;
-        if (!document.head.querySelector(`style[id='${CLASSNAME}']`)) {
-            appendCss(head);
+        if (!document.head.querySelector(`style[id='${STYLEID}']`)) {
+            this.appendCss(head);
         }
     }
 
@@ -53,14 +53,14 @@ class BaseGauge extends React.Component {
             // Note: Units ('px') are required for animation in Microsoft Edge.
             strokeDashoffset = Math.ceil((100 - this.props.value) / 100 * CIRCUMFERENCE / 2) + 'px';
         } else {
-            strokeDashoffset =  Math.ceil((100 - this.props.value) / 100 * CIRCUMFERENCE) + 'px';
+            strokeDashoffset = Math.ceil((100 - this.props.value) / 100 * CIRCUMFERENCE) + 'px';
         }
 
         return {
             stroke: this.props.color,
             strokeWidth: this.props.width,
             strokeDashoffset
-        }
+        };
     }
 
     getViewBox () {
@@ -81,32 +81,38 @@ class BaseGauge extends React.Component {
         );
     }
 
-};
+}
 
-Gauge.propTypes = {
+BaseGauge.propTypes = {
     color: React.PropTypes.string,
     type: React.PropTypes.string,
     value (props, propName, componentName) {
         const prop = props[propName];
+        const max = 100;
+        const min = 0;
         if (prop) {
             if (typeof prop !== 'number') {
-                return new Error(`Warning: Failed propType: Invalid prop \`${propName}\` of type \`${typeof prop}\` supplied to \`${componentName}\`, expected \`number\` between \`0\` and \`100\`. Check the render method of \`DemoApp\`.`);
+                return new Error(`Warning: Failed propType: Invalid prop \`${propName}\` of type ` +
+                `\`${typeof prop}\` supplied to \`${componentName}\`, expected \`number\` ` +
+                `between \`${min}\` and \`${max}\`.`);
             } else if (prop < 0 || prop > 100) {
-                return new Error(`Warning: Failed propType: Invalid value \`${prop}\` for prop \`${propName}\` supplied to \`${componentName}\`, expected \`number\` between \`0\` and \`100\`. Check the render method of \`DemoApp\`.`);
+                return new Error(`Warning: Failed propType: Invalid value \`${prop}\` for prop ` +
+                `\`${propName}\` supplied to \`${componentName}\`, expected \`number\` between ` +
+                `\`${min}\` and \`${max}\`.`);
             }
-            return null;
         }
+        return null;
     },
     width: React.PropTypes.string
 };
 
-Gauge.defaultProps = {
+BaseGauge.defaultProps = {
     color: 'Orange',
     value: 50,
     width: '2em'
 };
 
-class FullGauge extends BaseGauge {};
+class FullGauge extends BaseGauge {}
 
 class HalfGauge extends BaseGauge {
 
@@ -117,6 +123,6 @@ class HalfGauge extends BaseGauge {
         };
     }
 
-};
+}
 
-export {FullGauge, HalfGauge};
+export { FullGauge, HalfGauge };
