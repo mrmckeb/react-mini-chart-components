@@ -5,7 +5,7 @@ module.exports = {
     entry: [
         'eventsource-polyfill',
         'webpack-hot-middleware/client',
-        './app.jsx'
+        './dev/example/app.jsx'
     ],
     output: {
         path: path.join(__dirname, 'dist'),
@@ -22,7 +22,7 @@ module.exports = {
                 test: /\.jsx$/,
                 exclude: /(node_modules)/,
                 loader: 'babel',
-                include: path.join(__dirname, ''),
+                include: path.join(__dirname, '../'),
                 query: {
                     presets: ['react', 'es2015'],
                     plugins: [
