@@ -10,6 +10,13 @@ const CIRCUMFERENCE = 2 * Math.PI * CIRCLE.r;
 
 const STYLEID = 'react-mini-chart-gauge';
 
+// TODO
+// https://css-tricks.com/svg-line-animation-works/
+// - Great discussion on animation (still need to use dasharray).
+// - example on how to get path lengths too.
+// http://codepen.io/mrmckeb/pen/dMzBov
+
+
 class BaseGauge extends React.Component {
 
     constructor (props) {
